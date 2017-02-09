@@ -1,0 +1,30 @@
+@(categories: List[Categories])
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type ="text/css" href="@routes.Assets.at("stylesheets/main.css")"/>
+
+</head>
+<body>
+
+<h1> List of Categories</h1>
+<table>
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>Description</th>
+        <th>Picture</th>
+    </tr>
+    @for(category <- categories) {
+    <tr>
+        <td>@category.categoryId</td>
+        <td>@category.categoryName</td>
+        <td>@category.description</td>
+        <td><img src=@{routes.CategoriesController.getPicture(category.categoryId)}> </td>
+
+    </tr>
+    }
+</table>
+</body>
+</html>

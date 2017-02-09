@@ -1,0 +1,24 @@
+@(orderdetails: List[OrderDetails])
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<table>
+    <tr>
+        <th>Product ID</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+    </tr>
+    @for(orderdetail <- orderdetails) {
+    <tr>
+        <td>@orderdetail.productId</td>
+        <td>@orderdetail.unitPrice</td>
+        <td>@orderdetail.quantity</td>
+    </tr>
+    }
+</table>
+</body>
+</html>
