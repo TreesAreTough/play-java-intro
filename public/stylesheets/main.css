@@ -6,11 +6,13 @@ h1 {
 table {
     width: 800px;}
 th, td {
+        color: white;
+
 
     padding: 7px 10px 10px 10px;}
 th{
-    background-color: red;
 
+    background-color: red;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 90%;
@@ -20,8 +22,8 @@ th{
 body {
    background-image: url("http://vignette2.wikia.nocookie.net/xcom/images/6/68/XCOM_Shield_Logo.gif/revision/latest?cb=20130201075337");
 }
-
-tr.even{
-    background-color: #4682b4;}
+tr.nth-child(odd){
+background-color: #efefef;
+opacity: 0.5;}
 tr:hover{
     background-color: #4682b4;}

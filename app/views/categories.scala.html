@@ -18,7 +18,7 @@
     </tr>
     @for(category <- categories) {
     <tr>
-        <td>@category.categoryId</td>
+        <td><a href="@routes.CategoriesController.editCategory(category.categoryId)">Edit</a>@category.categoryId</td>
         <td>@category.categoryName</td>
         <td>@category.description</td>
         <td><img src=@{routes.CategoriesController.getPicture(category.categoryId)}> </td>

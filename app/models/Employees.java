@@ -18,4 +18,8 @@ public class Employees
 
     @Column (name = "photo")
     public byte [] photo;
+
+    @OneToOne (optional = true)
+    @JoinColumn(name = "reportsTo")
+    public Employees manager;
 }

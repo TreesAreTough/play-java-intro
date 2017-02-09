@@ -1,0 +1,29 @@
+@(customers: List[Customers])
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type ="text/css" href="@routes.Assets.at("stylesheets/main.css")"/>
+
+</head>
+<body>
+
+<h1> List of Customers</h1>
+<table>
+    <tr>
+        <th>Customer ID</th>
+        <th>Contact Name</th>
+        <th>Company Name</th>
+    </tr>
+    @for(customer <- customers) {
+    <tr>
+
+        <td>@customer.customerId</td>
+        <td>@customer.contactName</td>
+        <td>@customer.companyName</td>
+
+    </tr>
+    }
+</table>
+</body>
+</html>

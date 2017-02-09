@@ -9,17 +9,25 @@
 <h1> List of Employees</h1>
 <table>
     <tr>
+
         <th>Employee ID</th>
         <th>Last Name</th>
         <th>First Name</th>
         <th>Picture</th>
+        <th>Manager First Name</th>
+        <th>Manager Last Name</th>
+        <th>Manager Picture</th>
     </tr>
     @for(employee <- employees) {
     <tr>
-        <td>@employee.employeeId</td>
+        <td><a href="@routes.EmployeesController.editEmployee(employee.employeeId)">Edit</a>@employee.employeeId</td>
         <td>@employee.firstName</td>
         <td>@employee.lastName</td>
-        <td><img src=@{routes.EmployeesController.getPicture(employee.employeeId)}></td> </tr>
+        <td><img src=@{routes.EmployeesController.getPicture(employee.employeeId)}></td>
+        <td>@if(employee.manager != null){@employee.manager.firstName}</td>
+        <td>@if(employee.manager != null){@employee.manager.lastName}</td>
+        <td>@if(employee.manager != null){<img src=@{routes.EmployeesController.getPicture(employee.manager.employeeId)}>}</td>
+    </tr>
     }
 </table>
 </body>

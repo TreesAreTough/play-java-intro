@@ -31,3 +31,11 @@ GET     /newEmployee                controllers.EmployeesController.newEmployee(
 # Orderdetails page
 GET     /orderDetails               controllers.OrderDetailsController.getOrderDetails()
 GET     /orderDetailsList           controllers.OrderDetailsController.index()
+
+# Customer page
+GET     /customers                  controllers.CustomersController.getCustomers()
+GET     /customersList              controllers.CustomersController.index()
+GET     /newCustomers               controllers.CustomersController.newCustomers()
+GET     /editCustomers/:id          controllers.CustomersController.editCustomers(id:Long)
+POST    /updateCustomers            controllers.CustomersController.updateCustomers()
+POST    /addCustomers               controllers.CustomersController.addCustomers()

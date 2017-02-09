@@ -1,0 +1,17 @@
+@(customers: Customers)
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+
+<form method="POST" action="@routes.CustomersController.updateCustomers()" id ="updateCustomers">
+    <input type="hidden" name="customerId" value="@customers.customerId"/><br>
+    First Name: <input type="text" name="firstName" value="@customers.contactName"/><br>
+    Last Name:  <input type="text" name ="lastName" value="@customers.companyName"/><br>
+    <button>Update Customer</button>
+</form>
+</body>
+</html>

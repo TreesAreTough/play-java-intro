@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Customer</title>
+</head>
+<body>
+<form method="POST" action ="@routes.CustomersController.addCustomers()" id="newCustomer">
+    First Name: <input type="text" name ="firstName"/><br>
+    Last Name: <input type="text" name ="lastName"/><br>
+
+    <button>Add Customer</button>
+</form>
+</body>
+</html>

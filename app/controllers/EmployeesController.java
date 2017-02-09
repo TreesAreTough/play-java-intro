@@ -1,7 +1,6 @@
 package controllers;
 
 
-import models.Categories;
 import models.Employees;
 import play.data.DynamicForm;
 import play.data.FormFactory;
