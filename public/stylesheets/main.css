@@ -1,0 +1,27 @@
+
+h1 {
+    background-color: green;
+}
+
+table {
+    width: 800px;}
+th, td {
+
+    padding: 7px 10px 10px 10px;}
+th{
+    background-color: red;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 90%;
+    border-bottom: 2px solid #999;
+    text-align: left;}
+
+body {
+   background-image: url("http://vignette2.wikia.nocookie.net/xcom/images/6/68/XCOM_Shield_Logo.gif/revision/latest?cb=20130201075337");
+}
+
+tr.even{
+    background-color: #4682b4;}
+tr:hover{
+    background-color: #4682b4;}
