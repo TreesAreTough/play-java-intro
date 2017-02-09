@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.PersonController.index()
+POST    /person                     controllers.PersonController.addPerson()
+GET     /persons                    controllers.PersonController.getPersons()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# Categories Page
+GET     /categories                 controllers.CategoriesController.getCategories()
+GET     /categoriesList             controllers.CategoriesController.index()
+GET     /newCategory                controllers.CategoriesController.newCategory()
+POST    /addCategory                controllers.CategoriesController.addCategory()
+GET     /categoriesPicture/:id      controllers.CategoriesController.getPicture(id:Long)
+GET     /editCategory/:id           controllers.CategoriesController.editCategory(id:Long)
+POST    /updateCategory             controllers.CategoriesController.updateCategory()
+
+# Employees page
+GET     /employees                  controllers.EmployeesController.getEmployees()
+GET     /employeesList              controllers.EmployeesController.index()
+GET     /employeePicture/:id        controllers.EmployeesController.getPicture(id:Long)
+GET     /editEmployee/:id           controllers.EmployeesController.editEmployee(id:Long)
+POST    /updateEmployee             controllers.EmployeesController.updateEmployee()
+POST    /addEmployee                controllers.EmployeesController.addEmployee()
+GET     /newEmployee                controllers.EmployeesController.newEmployee()
+
+# Orderdetails page
+GET     /orderDetails               controllers.OrderDetailsController.getOrderDetails()
+GET     /orderDetailsList           controllers.OrderDetailsController.index()
