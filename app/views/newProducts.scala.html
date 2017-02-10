@@ -1,0 +1,19 @@
+@(categories: List[Categories])
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<form method="POST" action="@routes.ProductsController.addProducts()" id="newProduct">
+    <input type="text" name="productName"/><br>
+    <select name="categoryId">
+        @for(category <- categories) {
+        <option value = "@category.categoryId">@category.categoryName</option>
+        }
+    </select>
+    <button>Add Product</button>
+</form>
+</body>
+</html

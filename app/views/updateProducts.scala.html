@@ -1,0 +1,19 @@
+@(product: Products, categories: List[Categories])
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<form method="POST" action="@routes.ProductsController.updateProducts()" id="updateProduct">
+    <input type="hidden" name="productId" value="@product.productId"/><br>
+    <input type="text" name="productName" value="@product.productName"/><br>
+    <select name="categoryId">
+        @for(category <- categories) {
+        <option @if(category.categoryId == product.category.categoryId){selected }value = "@category.categoryId">@category.categoryName</option>
+        }
+    </select><br>
+    <button>Save Product</button>
+</form>
+</body>
