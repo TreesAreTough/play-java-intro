@@ -34,7 +34,8 @@ tr:nth-child(even) {
         <th>@order.orderId</th>
         <th>@order.employee.firstName</th>
         <th>@order.employee.lastName</th>
-        <th>@order.orderId</th>
+        <th><img src=@{routes.EmployeesController.getPicture(order.employee.employeeId)}></th>
+
     </tr>
     }
 </table>

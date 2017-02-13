@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.PersonController.index()
+GET     /index                      controllers.PersonController.index()
 POST    /person                     controllers.PersonController.addPerson()
 GET     /persons                    controllers.PersonController.getPersons()
 
@@ -39,3 +39,26 @@ GET     /newCustomers               controllers.CustomersController.newCustomers
 GET     /editCustomers/:id          controllers.CustomersController.editCustomers(id:Long)
 POST    /updateCustomers            controllers.CustomersController.updateCustomers()
 POST    /addCustomers               controllers.CustomersController.addCustomers()
+
+# Products page
+GET     /products                   controllers.ProductsController.getProducts()
+GET     /productsList               controllers.ProductsController.index()
+GET     /newProducts                controllers.ProductsController.newProducts()
+GET     /editProducts/:id           controllers.ProductsController.editProducts(id:Long)
+POST    /updateProducts             controllers.ProductsController.updateProducts()
+POST    /addProducts                controllers.ProductsController.addProducts()
+
+# Orders page
+GET     /orders                     controllers.OrdersController.getOrders()
+GET     /ordersList                 controllers.OrdersController.index()
+GET     /ordersO                    controllers.OrdersController.indexOfStuff()
+
+# API Demo
+GET     /rawjson                    controllers.APIDemo.getDemo()
+GET     /pojo                       controllers.APIDemo.getDemoPojo()
+GET     /pojoTree                   controllers.APIDemo.getDemoPojoTree()
+GET     /placeHolder                controllers.APIDemo.getPlaceHolder()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+

@@ -1,0 +1,25 @@
+@(myOrders: List[MyOrder])
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type ="text/css" href="@routes.Assets.at("stylesheets/main.css")"/>
+
+</head>
+<body>
+<table>
+    <tr>
+        <th>My Order ID</th>
+        <th>Customer ID</th>
+        <th>Quantity</th>
+    </tr>
+    @for(myOrder <- myOrders) {
+    <tr>
+        <td>@myOrder.myOrderId.orderId</td>
+        <td>@myOrder.customerId</td>
+        <td>@myOrder.quantity</td>
+    </tr>
+    }
+</table>
+</body>
+</html>

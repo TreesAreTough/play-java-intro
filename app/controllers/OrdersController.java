@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Employees;
+import models.MyOrder;
 import models.Orders;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
@@ -40,5 +41,15 @@ public class OrdersController extends Controller
 
         return ok(views.html.orders.render(orders));
     }
+    @Transactional(readOnly = true)
+    public Result indexOfStuff()
+    {
+        List<MyOrder> myOrders = (List<MyOrder>) jpaApi.em().createNativeQuery("select od.orderId, od.productid, o.customerId, od.quantity from orders o join orderdetails od on o.orderid = od.orderid", MyOrder.class).getResultList();
+
+        return ok(views.html.myOrder.render(myOrders));
+    }
+
+
 
 }
+

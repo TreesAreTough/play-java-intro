@@ -1,0 +1,21 @@
+@(jobSearch: JobSearch)
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+Count: @jobSearch.getCount<br>
+<table>
+    <th>Title</th>
+    <th>Company</th>
+    @for(resultItem <- jobSearch.getResultItems) {
+    <tr>
+        <td>@resultItem.getJobTitle</td>
+        <td>@resultItem.getCompany</td>
+    </tr>
+    }
+</table>
+
+</body>
+</html>
