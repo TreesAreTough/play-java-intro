@@ -1,0 +1,15 @@
+@(randomUser: RandomUser)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random User</title>
+</head>
+<h1>Random User Info</h1>
+<body>
+@for(results <- randomUser.getResults){
+
+@results.getGender
+}
+</body>
+</html>

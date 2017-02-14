@@ -1,3 +1,4 @@
+@(randomUser: RandomUser)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,12 @@
     <title>Add New Employee</title>
 </head>
 <body>
-<form method="POST" action ="@routes.EmployeesController.addEmployee()" id="newEmployee">
-   First Name: <input type="text" name ="firstName"/><br>
-   Last Name: <input type="text" name ="lastName"/><br>
+@for(results <- randomUser.getResults){
 
+<form method="POST" action ="@routes.EmployeesController.addEmployee()" id="newEmployee">
+   First Name: <input type="text" name ="firstName" value = "@results.getName.getFirst" /> <br>
+   Last Name: <input type="text" name ="lastName" value = "@results.getName.getLast" /> <br>
+}
     <button>Add Employee</button>
 </form>
 </body>

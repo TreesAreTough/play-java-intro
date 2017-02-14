@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import models.JobSearch;
 import models.Location;
 import models.PlaceHolder;
+import models.RandomUser;
 import play.Logger;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -141,5 +142,28 @@ public class APIDemo extends Controller
         }
 
         return ok(views.html.placeHolder.render(placeHolder));
+    }
+    public Result getRandomUser()
+    {
+
+        RandomUser randomUser = null;
+        try
+        {
+            String myURL = "https://randomuser.me/api";
+
+            URL url = new URL(myURL);
+
+            HttpURLConnection request = (HttpURLConnection) url.openConnection();
+            request.connect();
+
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            randomUser = objectMapper.readerFor(RandomUser.class).readValue(url);
+        } catch (Exception e)
+        {
+            Logger.error("oh no! got some exception: " + e.getMessage());
+        }
+
+        return ok(views.html.randomUser.render(randomUser));
     }
 }
